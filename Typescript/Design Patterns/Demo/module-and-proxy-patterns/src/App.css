@@ -1,0 +1,38 @@
+.App {
+  text-align: center;
+}
+
+.App * {
+  box-sizing: border-box;
+}
+
+form {
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+label, input {
+  display: block;
+  text-align: left;
+}
+
+button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+input {
+  width: 100%;
+}
+
+.input-field + .input-field {
+  margin-top: 12px;
+}
