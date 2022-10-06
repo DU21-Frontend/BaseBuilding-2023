@@ -7,7 +7,7 @@
  *
  *
  * @Dấu đi những thông tin, phương thức mà không muốn public ra ngoài
- * thông qua trạng thái của các properties, method được định nghĩa: 
+ * thông qua trạng thái của các properties, method được định nghĩa:
  * (public, private, protected, readonly, getter, setter)
  *
  *
@@ -18,52 +18,55 @@
 
 // Person Object:
 class Person {
-  public name: string
-  readonly weight: number
-  private phone: number
-  protected age: number
+  public name: string;
+  readonly weight: number;
+  private _phone: number;
+  protected age: number;
 
   constructor(name: string, weight: number, phone: number, age: number) {
-    this.name = name
-    this.age = age
-    this.phone = phone
-    this.weight = weight
+    this.name = name;
+    this.age = age;
+    this._phone = phone;
+    this.weight = weight;
   }
 }
 
 class Students extends Person {
-  private _studentId: string
+  private _studentId: string;
   // public factory: string
 
   constructor(name: string, weight: number, phone: number, age: number, public factory: string) {
-    //By calling the super() method in the constructor method, we call the parent's constructor method 
+    //By calling the super() method in the constructor method, we call the parent's constructor method
     //and get access to the parent's properties and methods
-    super(name, weight, phone, age) // The super() method refers to the parent class.
+    super(name, weight, phone, age); // The super() method refers to the parent class.
     // this.factory = factory
   }
 
   public get studentId() {
-    return this._studentId
+    return this._studentId;
   }
 
   public set studentId(value: string) {
-    if(value.length === 0) {
-      throw new Error("Invalid...")
+    if (value.length === 0) {
+      throw new Error('Invalid...');
     }
     this._studentId = value;
   }
 
   // Có thể truy cập biến protected từ class con.
   sayHi(): void {
-    console.log(`hi, my name is ${this.name}, I'm ${this.age}`)
+    console.log(`hi, my name is ${this.name}, I'm ${this.age}`);
   }
 }
 
-const student1 = new Students('Lan Anh', 50, 0982313422, 18, 'Tieng anh')
+const student1 = new Students('Lan Anh', 50, 0982313422, 18, 'Tieng anh');
+
 // Chỉ có thể truy cập các biến public ở bên ngoài class:
-console.log(student1.name)
+console.log(student1.name);
+
 // Truy cập vào biến protected trong class con:
-student1.sayHi()
+student1.sayHi();
+
 // Không thể truy cập vào biến private ngoài class:
 // console.log(student1.phone);//--> Throw Error
 
@@ -74,23 +77,24 @@ student1.sayHi()
  * @getters : Return the value of a property.
  * @Setters : Update value of a property.
  */
-student1.studentId = '' // accsess setter
-console.log(student1.studentId) // access getter
-console.log(student1)
+student1.studentId = ''; // accsess setter
+
+console.log(student1.studentId); // access getter
+console.log(student1);
 
 // Computer Object:
 class Computer {
-  color: string
-  model: string
+  public color: string;
+  public model: string;
+
   constructor(color: string, model: string) {
-    this.color = color
-    this.model = model
+    this.color = color;
+    this.model = model;
   }
 }
 
-const computer1 = new Computer('black', 'Dell-2022')
+const computer1 = new Computer('black', 'Dell-2022');
 
-console.log(computer1)
+console.log(computer1);
 
-
-console.log('<<<<<<<<<<<< ENCAPSULATION EN >>>>>>>>>>>>>>>>')
+console.log('<<<<<<<<<<<< ENCAPSULATION EN >>>>>>>>>>>>>>>>');
