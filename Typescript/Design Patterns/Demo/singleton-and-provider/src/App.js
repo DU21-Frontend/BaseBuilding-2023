@@ -35,6 +35,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/singleton" element={<TranslateSelect />} />
+          <Route path="/singleton-by-class" element={<Singleton />} />
           <Route path="/provider" element={<Provider />} />
         </Routes>
       </ThemeContext.Provider>

@@ -9,6 +9,9 @@ export const Sidebar = () => {
       <Link to="/singleton" className="link">
         <li>Singleton</li>
       </Link>
+      <Link to="/singleton-by-class" className="link">
+        <li>Singleton By Class</li>
+      </Link>
       <Link to="/provider" className="link">
         <li>Provider</li>
       </Link>
