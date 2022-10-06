@@ -5,6 +5,7 @@ import Singleton from "./pages/Singleton";
 import "antd/dist/antd.css";
 import React, { useState } from "react";
 import Provider from "./pages/Provider";
+import TranslateSelect from "./components/TranslateSelect";
 
 export const themes = {
   light: {
@@ -33,7 +34,7 @@ const App = () => {
       <ThemeContext.Provider value={{ theme: themes[theme], toggleTheme }}>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/singleton" element={<Singleton />} />
+          <Route path="/singleton" element={<TranslateSelect />} />
           <Route path="/provider" element={<Provider />} />
         </Routes>
       </ThemeContext.Provider>
