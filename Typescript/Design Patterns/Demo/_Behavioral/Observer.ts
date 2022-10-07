@@ -1,12 +1,4 @@
 
-console.log('///////////////////////////////////////////////')
-console.log('///////////////////////////////////////////////')
-console.log('///////////////////////////////////////////////')
-console.log('///////////////////////////////////////////////')
-console.log('///////////////////////////////////////////////')
-console.log('///////////////////////////////////////////////')
-
-
 interface Subject {
   subscribe(observer: Observer): void;
   unsubscribe(observer: Observer): void;
@@ -99,7 +91,7 @@ class Company implements Observer {
   }
 }
 
-class Person implements Observer {
+class Client implements Observer {
   public update(noti: string): void {
     return console.log('[ Person - noti ]: ', noti);
   }
@@ -131,18 +123,21 @@ const appStore = new AppleStore();
 // * Create concrete Observers
 const newShop = new Shop();
 const newCompany = new Company();
-const newPerson = new Person();
+const newClient = new Client();
 
 // * Observers are subscribing Subject 
 appStore.subscribe(newShop);
 appStore.subscribe(newCompany);
-appStore.subscribe(newPerson);
-
-// * PmDoo don't want to buy this garbage phone anymore
-appStore.unsubscribe(newPerson);
+appStore.subscribe(newClient);
 
 // * Notify all
 appStore.releaseNewIphone();
+
+// * PmDoo don't want to buy this garbage phone anymore
+// appStore.unsubscribe(newClient);
+
+// * Notify all
+// appStore.releaseNewIphone();
 
 
 
